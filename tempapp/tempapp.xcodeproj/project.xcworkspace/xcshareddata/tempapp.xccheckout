@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>646809B3-5C0D-423C-A8D5-A1C4D91925D6</string>
+	<string>ECDE69F6-DECB-4095-8408-67D86C041D6A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>tomatoes</string>
+	<string>tempapp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>BFE8C571-2180-403A-BE67-2058750DFE5E</key>
+		<key>7242A77D-8ABE-476A-8240-F759BD3A55E1</key>
 		<string>https://github.com/rakheshr/ios-training.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>tomatoes/tomatoes.xcodeproj/project.xcworkspace</string>
+	<string>tempapp/tempapp.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>BFE8C571-2180-403A-BE67-2058750DFE5E</key>
+		<key>7242A77D-8ABE-476A-8240-F759BD3A55E1</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>BFE8C571-2180-403A-BE67-2058750DFE5E</string>
+	<string>7242A77D-8ABE-476A-8240-F759BD3A55E1</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>BFE8C571-2180-403A-BE67-2058750DFE5E</string>
+			<string>7242A77D-8ABE-476A-8240-F759BD3A55E1</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ios-training</string>
 		</dict>
