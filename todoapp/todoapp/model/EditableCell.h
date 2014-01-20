@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditableCell : UITableViewCell
+@interface EditableCell : UITableViewCell //<UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *todoItemText;
 

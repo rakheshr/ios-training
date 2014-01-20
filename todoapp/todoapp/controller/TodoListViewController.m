@@ -30,7 +30,7 @@ NSUserDefaults *defaults;
 {
     NSLog(@"textFieldShouldEndEditing");
     @try{
-        //        NSLog(textField.text);
+        //NSLog(textField.text);
         NSIndexPath *indexPath = objc_getAssociatedObject(textField, &indexPathKey);
         [toDoListArray replaceObjectAtIndex:indexPath.row withObject:textField.text];
         [self synchronizeUserDefaults];
@@ -75,18 +75,12 @@ NSUserDefaults *defaults;
     toDoListArray = [[defaults objectForKey:@"todoList"] mutableCopy];
     if (Nil == toDoListArray){
         toDoListArray = [[NSMutableArray alloc] init];
-        //[toDoListArray addObject:@"one"];
     }
     [defaults synchronize];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd  target:self action:@selector(addNewTodo)];
     self.navigationItem.rightBarButtonItem = addButton;
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 - (void) addNewTodo
@@ -95,7 +89,7 @@ NSUserDefaults *defaults;
     [toDoListArray addObject:@""];
     [self synchronizeUserDefaults];
     [self.tableView reloadData];
-    // [self.tableView.]
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,7 +121,10 @@ NSUserDefaults *defaults;
     EditableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.todoItemText.text = [toDoListArray objectAtIndex:indexPath.row];
     objc_setAssociatedObject(cell.todoItemText, &indexPathKey, indexPath, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [cell.todoItemText becomeFirstResponder];
     cell.todoItemText.delegate = self;
+    
+    
     return cell;
 }
 
