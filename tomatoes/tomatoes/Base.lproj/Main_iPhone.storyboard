@@ -51,7 +51,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAK-xA-djM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="-247"/>
+            <point key="canvasLocation" x="429" y="-248"/>
         </scene>
         <!--Movie Details View Controller - Frozen-->
         <scene sceneID="as9-Yf-gjI">
@@ -70,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gia-LG-hUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="-248"/>
+            <point key="canvasLocation" x="912" y="-248"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y3w-HS-oPG">
