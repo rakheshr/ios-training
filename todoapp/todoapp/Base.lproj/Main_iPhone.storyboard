@@ -20,22 +20,24 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DJr-HU-8wE">
-                                            <rect key="frame" x="7" y="5" width="307" height="26"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enb-fq-xLP">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="DJr-HU-8wE" firstAttribute="centerX" secondItem="OJJ-PY-jKL" secondAttribute="centerX" id="Ejy-Nz-hvS"/>
-                                        <constraint firstItem="DJr-HU-8wE" firstAttribute="top" secondItem="OJJ-PY-jKL" secondAttribute="top" constant="5" id="GNQ-No-m72"/>
-                                        <constraint firstAttribute="bottom" secondItem="DJr-HU-8wE" secondAttribute="bottom" constant="8" id="Tqf-Z9-tca"/>
-                                        <constraint firstItem="DJr-HU-8wE" firstAttribute="leading" secondItem="OJJ-PY-jKL" secondAttribute="leading" constant="7" id="qh6-1P-M6g"/>
+                                        <constraint firstItem="enb-fq-xLP" firstAttribute="leading" secondItem="OJJ-PY-jKL" secondAttribute="leading" id="6hb-vX-7dz"/>
+                                        <constraint firstAttribute="bottom" secondItem="enb-fq-xLP" secondAttribute="bottom" id="GTO-Qm-mnk"/>
+                                        <constraint firstItem="enb-fq-xLP" firstAttribute="top" secondItem="OJJ-PY-jKL" secondAttribute="top" id="YaZ-3V-SCp"/>
+                                        <constraint firstAttribute="trailing" secondItem="enb-fq-xLP" secondAttribute="trailing" id="zJ9-tD-fDH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="todoItemText" destination="DJr-HU-8wE" id="GBb-CD-Uyu"/>
+                                    <outlet property="todoItemText" destination="enb-fq-xLP" id="zin-6q-p7D"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -44,7 +46,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gsx-U3-9V6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1403" y="47"/>
+            <point key="canvasLocation" x="1333" y="34"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lz4-1N-Xjp">

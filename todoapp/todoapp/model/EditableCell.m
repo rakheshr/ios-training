@@ -26,10 +26,7 @@
     // Configure the view for the selected state
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    CGFloat height = 6.2;
-//}
+
 
 
 

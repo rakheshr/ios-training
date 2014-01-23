@@ -10,6 +10,10 @@
 #import "EditableCell.h"
 #import <objc/runtime.h>
 
+#define MAX_TEXTVIEW_WIDTH 313
+#define MAX_TEXTVIEW_HEIGHT 80
+#define EXTRA_HEIGHT_PADDING 18
+
 
 static char indexPathKey;
 @interface TodoListViewController ()
@@ -26,13 +30,13 @@ NSUserDefaults *defaults;
     [defaults synchronize];
 }
 
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView
 {
     NSLog(@"textFieldShouldEndEditing");
     @try{
         //NSLog(textField.text);
-        NSIndexPath *indexPath = objc_getAssociatedObject(textField, &indexPathKey);
-        [toDoListArray replaceObjectAtIndex:indexPath.row withObject:textField.text];
+        NSIndexPath *indexPath = objc_getAssociatedObject(textView, &indexPathKey);
+        [toDoListArray replaceObjectAtIndex:indexPath.row withObject:textView.text];
         [self synchronizeUserDefaults];
         
         
@@ -127,6 +131,22 @@ NSUserDefaults *defaults;
     
     return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //Max height width frame
+    CGSize boundingSize = CGSizeMake(MAX_TEXTVIEW_WIDTH, MAX_TEXTVIEW_HEIGHT);
+    //text size based on font and content
+    CGRect textRect = [[toDoListArray objectAtIndex:indexPath.row]
+                       boundingRectWithSize:boundingSize
+                       options:NSStringDrawingUsesLineFragmentOrigin
+                       attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]}
+                       context:nil];
+    //add some padding
+    CGFloat requiredHeight = textRect.size.height + EXTRA_HEIGHT_PADDING;
+    return requiredHeight;
+}
+
 
 /*
  // Override to support conditional editing of the table view.

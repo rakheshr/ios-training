@@ -10,7 +10,7 @@
 
 @interface EditableCell : UITableViewCell //<UITableViewDelegate>
 
-@property (nonatomic, weak) IBOutlet UITextField *todoItemText;
+@property (nonatomic, weak) IBOutlet UITextView *todoItemText;
 
 
 @end
