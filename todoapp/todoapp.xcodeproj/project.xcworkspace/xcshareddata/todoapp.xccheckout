@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D28C4054-4C04-4DA6-8012-D02BEF00CCF0</string>
+	<string>5228776D-A573-4829-AF36-31D33BBF2CB8</string>
 	<key>IDESourceControlProjectName</key>
 	<string>todoapp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>190CF259-7D3F-49F5-9196-F72962412D1E</key>
+		<key>D14DA395-7BDC-4E0E-9E7D-3E81D8E665CD</key>
 		<string>https://github.com/rakheshr/ios-training.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>todoapp/todoapp.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>190CF259-7D3F-49F5-9196-F72962412D1E</key>
+		<key>D14DA395-7BDC-4E0E-9E7D-3E81D8E665CD</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>190CF259-7D3F-49F5-9196-F72962412D1E</string>
+	<string>D14DA395-7BDC-4E0E-9E7D-3E81D8E665CD</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>190CF259-7D3F-49F5-9196-F72962412D1E</string>
+			<string>D14DA395-7BDC-4E0E-9E7D-3E81D8E665CD</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ios-training</string>
 		</dict>

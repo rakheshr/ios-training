@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>22F304E6-5896-4493-877E-708529AF76B8</string>
+	<string>1550C478-8D31-4406-9998-5E5BE2DC33CC</string>
 	<key>IDESourceControlProjectName</key>
-	<string>tomatoes</string>
+	<string>twitter</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D14DA395-7BDC-4E0E-9E7D-3E81D8E665CD</key>
 		<string>https://github.com/rakheshr/ios-training.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>tomatoes/tomatoes.xcodeproj/project.xcworkspace</string>
+	<string>ios_twitter/twitter.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D14DA395-7BDC-4E0E-9E7D-3E81D8E665CD</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/rakheshr/ios-training.git</string>
