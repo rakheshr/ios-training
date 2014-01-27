@@ -48,6 +48,14 @@
     
 }
 
+- (NSString *) reTweets {
+    return  [self.data valueOrNilForKeyPath:@"retweet_count"];
+}
+
+- (NSString *) favorites {
+    return  [self.data valueOrNilForKeyPath:@"favorite_count"];
+}
+
 + (NSMutableArray *)tweetsWithArray:(NSArray *)array {
     NSMutableArray *tweets = [[NSMutableArray alloc] initWithCapacity:array.count];
     for (NSDictionary *params in array) {

@@ -18,6 +18,10 @@
 @property (nonatomic, strong) TweetUser *tweetUsr;
 @property (nonatomic, strong) NSString *tweetIntervalFromNow;
 
+@property (nonatomic, strong, readonly) NSString *reTweets;
+@property (nonatomic, strong, readonly) NSString *favorites;
+
+
 + (NSMutableArray *)tweetsWithArray:(NSArray *)array;
 
 @end

@@ -11,6 +11,7 @@
 #import "TweetCell.h"
 #import <UIImageView+AFNetworking.h>
 #import "TweetUser.h"
+#import "TweetViewController.h"
 
 #define MAX_TEXTVIEW_WIDTH 313
 #define MAX_TEXTVIEW_HEIGHT 100
@@ -43,13 +44,7 @@
     [super viewDidLoad];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(onSignOutButton)];
-    self.navigationController.navigationBar.backgroundColor = [UIColor blueColor];
-//    self.navigationItem.titleView. =  [[UIImageView] initWithImage:[UIImage imageNamed:@"twitterImage"]];
-//    self.navigationController.navigationBar.alpha = 0.7f;
-    self.navigationController.navigationBar.translucent = YES;
-    UIImage *image = [UIImage imageNamed:@"twiiter_icon"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    [self.navigationController.navigationBar.topItem setTitleView:imageView];
+ 
     
     
     //Register the tweetcell nib
@@ -63,6 +58,16 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    UIColor *tweetColor = [UIColor colorWithRed:0.071f green:0.573f blue:0.824f alpha:1.0f];
+    self.navigationController.navigationBar.backgroundColor = tweetColor;
+    //    self.navigationController.navigationBar.alpha = 0.7f;
+    self.navigationController.navigationBar.translucent = YES;
+    UIImage *image = [UIImage imageNamed:@"twiiter_icon"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    [self.navigationController.navigationBar.topItem setTitleView:imageView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -114,7 +119,9 @@
     if(nil != profileImageURL){
         [tweetCell.tweetUserImgView setImageWithURL:profileImageURL];
     }
-
+    
+//    NSLog(@"Retweet count %@", tweet.reTweets);
+//    NSLog(@"Favorite count %@", tweet.favorites);
     return tweetCell;
 }
 
@@ -177,6 +184,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    Tweet *tweet =self.tweets[indexPath.row];
+    TweetViewController *tweetViewC = [[TweetViewController alloc]initWithTweet:tweet];
+    [self.navigationController pushViewController:tweetViewC animated:YES];
+    
 }
 
 /*

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TimelineVC : UITableViewController
+@property (nonatomic, strong) UINavigationController *tweetNVC;
 
 @end
