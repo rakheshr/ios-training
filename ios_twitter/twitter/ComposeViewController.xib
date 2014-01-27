@@ -51,12 +51,12 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
-                <outletCollection property="gestureRecognizers" destination="p8w-fc-a1e" appends="YES" id="0gQ-sf-XmF"/>
+                <outletCollection property="gestureRecognizers" destination="u7Y-f1-EwT" appends="YES" id="Dv7-mu-NN7"/>
             </connections>
         </view>
-        <tapGestureRecognizer id="p8w-fc-a1e">
+        <tapGestureRecognizer id="u7Y-f1-EwT">
             <connections>
-                <action selector="OnTapAction:" destination="-1" id="bFl-UN-WYW"/>
+                <action selector="OnTapAction:" destination="-1" id="Kcp-L0-cnW"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

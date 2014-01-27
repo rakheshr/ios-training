@@ -122,6 +122,11 @@
 
 - (IBAction)replyTweet:(id)sender {
     
+    ComposeViewController *composeViewController = [[ComposeViewController alloc] init];
+    composeViewController.replyUserId = self.tweet.tweetUsr.screenName;
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:composeViewController];
+    [self presentViewController:nvc animated:YES completion:nil];
+    
 }
 
 

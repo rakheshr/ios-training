@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *UserNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *UserScreenLabel;
 @property (weak, nonatomic) IBOutlet UITextView *TweetTextComposeView;
+@property (strong, nonatomic) NSString *replyUserId;
 
 @end

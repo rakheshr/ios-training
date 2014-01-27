@@ -80,15 +80,16 @@ static NSString * const kAccessTokenKey = @"kAccessTokenKey";
     [self postPath:@"1.1/favorites/create.json" parameters:params success:success failure:failure];
 }
 
-- (void)tweetWithUserText:(NSString*)tweetText tweetId:(NSString*) tweetId success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+- (void)tweetReplyWithUserTweet:(NSString*)tweetText inReplyToUser:(NSString*) userId success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
     
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"status": tweetText}];
-    if(tweetId != nil){
-        NSLog (@"Set to %@",tweetId);
-        [params setObject:tweetId forKey:@"in_reply_to_status_id"];
+    if(userId != nil){
+        NSLog (@"Set to %@",userId);
+        [params setObject:userId forKey:@"in_reply_to_status_id"];
     }
     [self postPath:@"1.1/statuses/update.json" parameters:params success:success failure:failure];
 }
+
 
 
 
