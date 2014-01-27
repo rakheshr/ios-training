@@ -24,7 +24,29 @@
     
 }
 
+- (TweetUser *) tweetUsr {
+    TweetUser *tweetUsr = [[TweetUser alloc]init];
+    NSDictionary *userDic =  [self.data valueOrNilForKeyPath:@"user"];
+    tweetUsr.screenName = [userDic valueOrNilForKeyPath:@"screen_name"];
+    tweetUsr.userName = [userDic valueOrNilForKeyPath:@"name"];
+    tweetUsr.profileUrl = [userDic valueOrNilForKeyPath:@"profile_image_url"];
+    NSLog(@"&&&&&& TweetUSer = %@", tweetUsr.screenName);
 
+    
+    return tweetUsr;
+}
+
+- (NSString *) tweetIntervalFromNow {
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"EEE MMM dd HH:mm:ss +zzzz yyyy"];
+    NSDate *createDate = [self.data valueOrNilForKeyPath:@"created_at"];
+    NSTimeInterval interval = -[createDate timeIntervalSinceNow];
+    interval = interval/60/60;
+    NSString *intervalString = [NSString stringWithFormat:@"%dh", (int)round(interval)];
+    return intervalString;
+    
+}
 
 + (NSMutableArray *)tweetsWithArray:(NSArray *)array {
     NSMutableArray *tweets = [[NSMutableArray alloc] initWithCapacity:array.count];

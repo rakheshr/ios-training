@@ -8,13 +8,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TweetUser.h"
 
 @interface Tweet : RestObject
 
 @property (nonatomic, strong, readonly) NSString *text;
 @property (nonatomic, strong, readonly) NSString *timestamp;
 @property (nonatomic, strong, readonly) NSDictionary *user;
-
+@property (nonatomic, strong) TweetUser *tweetUsr;
+@property (nonatomic, strong) NSString *tweetIntervalFromNow;
 
 + (NSMutableArray *)tweetsWithArray:(NSArray *)array;
 

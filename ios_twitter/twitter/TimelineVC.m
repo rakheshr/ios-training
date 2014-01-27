@@ -10,6 +10,7 @@
 #import "TimelineVC.h"
 #import "TweetCell.h"
 #import <UIImageView+AFNetworking.h>
+#import "TweetUser.h"
 
 #define MAX_TEXTVIEW_WIDTH 313
 #define MAX_TEXTVIEW_HEIGHT 100
@@ -82,14 +83,12 @@
     return self.tweets.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSString *)getTweetInterval:(Tweet *)tweet
 {
+    //tweetCell.tweetTimeLabel.text = tweet.tweetIntervalFromNow;
     
-    static NSString *CellIdentifier = @"TweetCell";
-    TweetCell *tweetCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    Tweet *tweet = self.tweets[indexPath.row];
-    tweetCell.tweetLabel.text = tweet.text;
-    //NSDate *createDate = tweet.timestamp;
+    
+    
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"EEE MMM dd HH:mm:ss +zzzz yyyy"];
     NSDate *createDate = [dateFormat dateFromString:tweet.timestamp];
@@ -97,21 +96,25 @@
     interval = interval/60/60;
     
     NSString *intervalString = [NSString stringWithFormat:@"%dh", (int)round(interval)];
-    tweetCell.tweetTimeLabel.text = intervalString;
-    NSDictionary *tweetUser = tweet.user;
-    NSString *screenName = [tweetUser objectOrNilForKey:@"screen_name"];
-    tweetCell.tweetUserAccountLabel.text =   [NSString stringWithFormat:@"@%@", screenName];
-    NSString *username = [tweetUser objectOrNilForKey:@"name"];
-    tweetCell.tweetUserNameLabel.text =username;
+    return intervalString;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
-    NSURL *profileImageURL = [NSURL URLWithString:[tweetUser objectOrNilForKey:@"profile_image_url"]];
+    static NSString *CellIdentifier = @"TweetCell";
+    TweetCell *tweetCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    Tweet *tweet = self.tweets[indexPath.row];
+    tweetCell.tweetLabel.text = tweet.text;
+    TweetUser *tUser = tweet.tweetUsr;
+    tweetCell.tweetUserAccountLabel.text = tUser.screenName;
+    tweetCell.tweetUserNameLabel.text =tUser.userName;
+    tweetCell.tweetTimeLabel.text =[self getTweetInterval:tweet];
+    NSURL *profileImageURL = [NSURL URLWithString:tUser.profileUrl];
     if(nil != profileImageURL){
-        //tweetCell.tweetUserImgView.image =baseURL;
-        NSLog(@"image url %@", [tweetUser objectOrNilForKey:@"profile_image_url"]);
         [tweetCell.tweetUserImgView setImageWithURL:profileImageURL];
-        
     }
-    
+
     return tweetCell;
 }
 
