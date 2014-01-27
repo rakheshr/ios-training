@@ -65,6 +65,35 @@ static NSString * const kAccessTokenKey = @"kAccessTokenKey";
     [self getPath:@"1.1/statuses/home_timeline.json" parameters:params success:success failure:failure];
 }
 
+//New methods for retweet, reply and fav
+
+-(void)retweetWithId:(NSString*)tweetId success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    NSString *postString = [NSString stringWithFormat:@"1.1/statuses/retweet/%@.json" ,tweetId];
+    
+    [self postPath:postString parameters:nil success:success failure:failure];
+}
+
+- (void)makeTweetFavoriteWithId:(NSString*)tweetId  success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"id": tweetId}];
+    
+    [self postPath:@"1.1/favorites/create.json" parameters:params success:success failure:failure];
+}
+
+- (void)tweetWithUserText:(NSString*)tweetText tweetId:(NSString*) tweetId success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"status": tweetText}];
+    if(tweetId != nil){
+        NSLog (@"Set to %@",tweetId);
+        [params setObject:tweetId forKey:@"in_reply_to_status_id"];
+    }
+    [self postPath:@"1.1/statuses/update.json" parameters:params success:success failure:failure];
+}
+
+
+
+
+
 #pragma mark - Private methods
 
 - (void)setAccessToken:(AFOAuth1Token *)accessToken {

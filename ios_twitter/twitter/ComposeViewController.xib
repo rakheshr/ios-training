@@ -7,6 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController">
             <connections>
+                <outlet property="TweetTextComposeView" destination="RyG-88-wWK" id="XGd-zI-dkJ"/>
+                <outlet property="UserNameLabel" destination="KS7-aP-aRM" id="ATA-Fc-b0i"/>
+                <outlet property="UserScreenLabel" destination="O2g-i6-74j" id="wKR-eq-VQq"/>
+                <outlet property="userImageView" destination="TuZ-mB-LaO" id="Xls-CV-Iyv"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -15,20 +19,45 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KS7-aP-aRM">
-                    <rect key="frame" x="116" y="81" width="192" height="16"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rakhesh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KS7-aP-aRM">
+                    <rect key="frame" x="77" y="84" width="192" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TuZ-mB-LaO">
-                    <rect key="frame" x="11" y="50" width="97" height="88"/>
+                    <rect key="frame" x="12" y="79" width="57" height="49"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@krrakhesh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2g-i6-74j">
+                    <rect key="frame" x="77" y="107" width="89" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" red="0.73315927933673475" green="0.73315927933673475" blue="0.73315927933673475" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.73315927930000002" green="0.73315927930000002" blue="0.73315927930000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="highlightedColor" red="0.73471380740000003" green="0.73471380740000003" blue="0.73471380740000003" alpha="1" colorSpace="calibratedRGB"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="What is happening" translatesAutoresizingMaskIntoConstraints="NO" id="RyG-88-wWK">
+                    <rect key="frame" x="12" y="147" width="294" height="152"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.62246890939999999" green="0.62246890939999999" blue="0.62246890939999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="twitter"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="p8w-fc-a1e" appends="YES" id="0gQ-sf-XmF"/>
+            </connections>
         </view>
+        <tapGestureRecognizer id="p8w-fc-a1e">
+            <connections>
+                <action selector="OnTapAction:" destination="-1" id="bFl-UN-WYW"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

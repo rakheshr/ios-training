@@ -11,6 +11,7 @@
 #import <UIImageView+AFNetworking.h>
 #import "ComposeViewController.h"
 #import <UIKit/UIKit.h>
+#import "TwitterClient.h"
 
 @interface TweetViewController ()
 
@@ -60,6 +61,9 @@
     NSLog(@"Tweet %@", self.tweet.tweetUsr.userName);
     [self loadButton];
     self.tweetlabel.text = self.tweet.text;
+    self.userNameLabel.text = self.tweet.tweetUsr.userName;
+    self.screenNameLabel.text = self.tweet.tweetUsr.screenName;
+    
     NSURL *profileImageURL = [NSURL URLWithString:self.tweet.tweetUsr.profileUrl];
     if(nil != profileImageURL){
         [self.profileImage setImageWithURL:profileImageURL];
@@ -91,11 +95,33 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)reTweetAction:(id)sender {
+    
+    NSLog (@"On Retweet called");
+    
+    NSString *tweetId = self.tweet.tweetId;
+    
+    [[TwitterClient instance] retweetWithId:tweetId success:^(AFHTTPRequestOperation *operation, id response) {
+        NSLog(@"%@",response);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",[error localizedDescription]);
+    }];
+    
 }
 - (IBAction)favoriteAction:(id)sender {
+    NSLog (@"On Favorite called");
+    
+    NSString *tweetId = self.tweet.tweetId;
+    
+    [[TwitterClient instance] makeTweetFavoriteWithId:tweetId success:^(AFHTTPRequestOperation *operation, id response) {
+        NSLog(@"%@", response);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",[error localizedDescription]);
+    }];
 }
 
 - (IBAction)replyTweet:(id)sender {
+    
 }
 
 

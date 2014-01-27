@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ComposeViewController : UIViewController
+@interface ComposeViewController : UIViewController <UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *userImageView;
+@property (weak, nonatomic) IBOutlet UILabel *UserNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *UserScreenLabel;
+@property (weak, nonatomic) IBOutlet UITextView *TweetTextComposeView;
 
 @end

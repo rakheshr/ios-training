@@ -30,7 +30,7 @@
     tweetUsr.screenName = [userDic valueOrNilForKeyPath:@"screen_name"];
     tweetUsr.userName = [userDic valueOrNilForKeyPath:@"name"];
     tweetUsr.profileUrl = [userDic valueOrNilForKeyPath:@"profile_image_url"];
-    NSLog(@"&&&&&& TweetUSer = %@", tweetUsr.screenName);
+//    NSLog(@"&&&&&& TweetUSer = %@", tweetUsr.screenName);
 
     
     return tweetUsr;
@@ -54,6 +54,10 @@
 
 - (NSString *) favorites {
     return  [self.data valueOrNilForKeyPath:@"favorite_count"];
+}
+
+- (NSString *) tweetId {
+    return  [self.data valueOrNilForKeyPath:@"id"];
 }
 
 + (NSMutableArray *)tweetsWithArray:(NSArray *)array {

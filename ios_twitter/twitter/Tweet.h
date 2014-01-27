@@ -20,7 +20,7 @@
 
 @property (nonatomic, strong, readonly) NSString *reTweets;
 @property (nonatomic, strong, readonly) NSString *favorites;
-
+@property (nonatomic, strong,readonly) NSString *tweetId;
 
 + (NSMutableArray *)tweetsWithArray:(NSArray *)array;
 

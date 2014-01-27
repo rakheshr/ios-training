@@ -22,4 +22,12 @@
 
 - (void)homeTimelineWithCount:(int)count sinceId:(int)sinceId maxId:(int)maxId success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
+- (void)retweetWithId:(NSString*)tweetId  success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
+
+- (void)makeTweetFavoriteWithId:(NSString*)tweetId  success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
+- (void)tweetReplyWithUserTweet:(NSString*)tweetText idString:(NSString*) idString success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
+
 @end
