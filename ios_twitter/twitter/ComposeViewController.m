@@ -62,7 +62,7 @@
 {
     NSLog(@"On tweet button called");
     NSString* status = self.TweetTextComposeView.text;
-    [[TwitterClient instance] tweetReplyWithUserTweet:status inReplyToUser:nil success:^(AFHTTPRequestOperation *operation, id response) {
+    [[TwitterClient instance] tweetReplyWithUserTweet:status inReplyToUser:self.replyUserId success:^(AFHTTPRequestOperation *operation, id response) {
         NSLog(@" Response %@", response);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
